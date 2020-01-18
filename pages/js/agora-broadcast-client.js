@@ -13,11 +13,11 @@ var mainStreamId; // reference to main stream
 // [full list: https://docs.agora.io/en/Interactive%20Broadcast/videoProfile_web?platform=Web#video-profile-table]
 var cameraVideoProfile = "720p_6"; // 960 × 720 @ 30fps  & 750kbs
 
-$(document).ready(function(){
-    var channel = prompt("Enter channel name");
-    console.log("channel",channel);
-    channelName =channel;
-})
+// $(document).ready(function(){
+//     var channel = prompt("Enter channel name");
+//     console.log("channel",channel);
+//     channelName =channel;
+// })
 
 // keep track of streams
 var localStreams = {
@@ -65,6 +65,9 @@ client.init(
   agoraAppId,
   function() {
     console.log("AgoraRTC client initialized");
+    var channel = prompt("Enter channel name");
+    console.log("channel",channel);
+    channelName =channel;
     joinChannel(); // join channel upon successfull init
   },
   function(err) {
